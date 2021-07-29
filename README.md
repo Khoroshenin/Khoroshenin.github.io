@@ -1,2 +1,2 @@
-# Khoroshenin.github.io
+# Александр Хорошенин
 My first website

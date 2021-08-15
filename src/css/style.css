@@ -1,0 +1,437 @@
+body {font-family: Arial, sans-serif;}
+
+/*МЕНЮ*/
+nav {
+    width: 100%;
+    height: 60px;
+    background: #344051;
+}
+
+.logo {
+    color: #ffff;
+    font-size: 30px;
+    line-height: 60px; /*устанавливаю лого по середине,так как высота блока 60пкс*/
+    margin-left: 388px;
+    float: left;
+}
+
+.menu {
+    float:left; /*блоки прижимаются к друг другу левым краем*/
+    padding-left: 432px;
+}
+
+.menu li {
+    float: left;
+    line-height: 60px; /*устанавливаю меню по середине,так как высота блока 60пкс*/
+    color: #fff;
+    margin-right: 40px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/*ПЕРВАЯ СТРАНИЦА - "Я ХОРОШЕНИН АЛЕКСАНДР"*/
+.firstpage {
+    width: 100%;
+    height: 1015px;  /*height: calc(100% - 60px); /*высота с учетом верхнего меню, без прокрутки*/
+    background: url(../img/photo.png) 90% 100%/auto 85% no-repeat, url(../img/sine.jpg) center/cover no-repeat;
+}
+        
+.title__container {
+    float: left;
+    margin: 400px; 0px; 0px; 404px;
+    text-align: center;
+}
+
+.title__container h1 {
+   font-size: 40px;
+   font-weight: bold;
+   color: #FFFFFF;
+}
+
+.title__container h4 {
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-top: 20px;
+}
+ 
+.title__container input {
+    height: 40px;
+    text-align: center;
+    border: 2px solid #FFFFFF;
+    border-radius: 3px;
+    background: none; /*сделал кнопки прозрачными*/
+    color: #FFFFFF;
+    font-size: 13px;
+    padding: 0px 14px;
+    margin: 30px 14px 0px 14px;
+}
+
+/*БЛОК - "ОБО МНЕ"*/
+.aboutme__container {
+    width: 100%;
+    height: 715px;
+    background-color: #DEE2E5;
+}
+
+.aboutme__container h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #344051;
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.aboutme__container hr {
+    border-bottom: 3px solid #344051;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-color: #344051;
+}
+
+.aboutme__container img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.aboutme__container h5 {
+    width: 730px;
+    margin: 30px auto 0 auto;
+    color: #344051;
+}
+
+.download {
+    border: 2px solid #344051;
+    width: 100px;
+    text-align: center;
+    margin: 30px auto 0 auto;
+    border-radius: 4px;
+    padding: 10px 0 10px 0;
+    color: #344051;
+}
+
+/*СТРАНИЦА - "ЧТО Я УМЕЮ"*/
+.myskills__container {
+    width: 100%;
+    height: 525px;
+    background: url(../img/sine.jpg) center/cover no-repeat;
+}
+
+.myskills__container h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFF;
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.myskills__container hr {
+    border-bottom: 3px solid #344051;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-color: #FFFF;
+}
+
+.skills_all {
+    width: 1200px;
+    height: 300px;
+    display: block; /*Выравниваю блоки по центру*/
+    margin: 0 auto; /*Выравниваю блоки по центру*/
+    margin-top: 80px;
+}
+
+.skill {
+    float: left;
+    width: 215px;
+    text-align:center;
+    display: block; /*Выравниваю блоки по центру*/
+    color: #FFFF;
+    margin: 0px 40px 0px 40px; 
+}
+
+.skilltitle {
+    margin-top: 25px;
+    color: #E88420;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.skilldescr {
+    margin-top: 15px;
+}
+
+
+/*БЛОК - "КЕЙСЫ"*/
+.cases__container {
+    width: 100%;
+    height: 1000px;
+}
+
+.cases__container h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #344051;
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.cases__container hr {
+    border-bottom: 3px solid #344051;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-color: #344051;   
+}
+
+#casestext {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    color: #344051;
+}
+
+.cases__container img {
+    display: block;
+    margin: 0 auto;
+}
+
+/*СТРАНИЦА - "РАСЧЕТ СТОИМОСТИ"*/
+.calculations__container {
+    width: 100%;
+}
+
+.calculations__container h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #102031;
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.calc_block1 {
+    width: 600px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.point {
+    font-size: 18px;
+    color: #102031;
+    text-transform: uppercase;
+}
+
+.list {
+    border: 2px solid #EFEFEF;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    padding-left: 10px;
+    background-color: #EFEFEF;
+    opacity: 0.7;
+}
+
+.calculations__container hr {
+    border-bottom: 2px solid #EFEFEF;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 600px;
+}
+
+.terms_main {
+    color: #102031;
+    font-weight: bold;
+    font-size: 15px;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.terms1 {
+    float: left;
+}
+
+.terms2 {
+    text-align: right;
+}
+
+.price_main {
+    color: #102031;
+    font-weight: bold;
+    font-size: 15px;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;   
+}
+
+.price1 {
+    float: left;
+}
+
+.price2 {
+    text-align: right;
+}
+
+
+/*БЛОК - "СТАТИСТИКА"*/
+.statistics__container {
+    margin-top: 100px;
+    height: 500px;
+    background: url(../img/sine.jpg) center/cover no-repeat; 
+}
+
+.statistics__container h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFF;
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.statistics__container hr {
+    border-bottom: 3px solid #344051;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-color: #FFFF;
+}
+
+.stats_all {
+    width: 1200px;
+    height: 300px;
+    display: block; /*Выравниваю блоки по центру*/
+    margin: 0 auto; /*Выравниваю блоки по центру*/
+    margin-top: 80px;
+}
+
+.stat {
+    float: left;
+    width: 215px;
+    text-align:center;
+    display: block; /*Выравниваю блоки по центру*/
+    color: #FFFF;
+    margin: 0px 40px 0px 40px; 
+}
+
+.statnumber {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.statdescr {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+/*БЛОК - "ОТЗЫВЫ"*/
+.feedback__container {
+    width: 100%;
+    height: 515px;
+    background-color: #FFFF;
+}
+
+.feedback__container h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #344051;
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.feedback__container hr {
+    border-bottom: 3px solid #344051;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-color: #344051;
+}
+
+
+.feedback__container img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+
+.feedback__container h5 {
+    width: 730px;
+    margin: 30px auto 0 auto;
+    color: #344051;
+    text-align: center;
+}
+
+.feedback__container h6 {
+    width: 730px;
+    margin: 30px auto 0 auto;
+    color: #344051;
+    text-align: center;
+}
+
+/*БЛОК - "КОНТАКТЫ"*/
+footer {
+    width: 100%;
+    background: url(../img/sine.jpg) center/cover no-repeat; 
+}
+
+footer h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFF;
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+footer hr {
+    border-bottom: 3px solid #344051;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-color: #FFFF;
+}
+
+footer h5 {
+    width: 730px;
+    margin: 30px auto 0 auto;
+    color: #FFFF;
+    text-align: center;
+}
+
+.contacts_all {
+    width: 1200px;
+    height: 300px;
+    margin-top: 80px;
+}
+
+.contacts {
+    text-align:center;
+    color: #FFFF;
+    margin: 0px 40px 0px 40px;
+}
+
+iframe {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+

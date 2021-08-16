@@ -413,13 +413,20 @@ footer h5 {
 .contacts_all {
     width: 1200px;
     height: 300px;
-    margin-top: 80px;
+    margin: 70px auto;
+    text-align:center;
 }
 
 .contacts {
     text-align:center;
     color: #FFFF;
-    margin: 0px 40px 0px 40px;
+    margin: 20px 40px 0px 40px;
+    display: inline-block;
+    
+}
+
+.contactstext {
+    margin-top: 20px;
 }
 
 iframe {

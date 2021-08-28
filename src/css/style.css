@@ -1,46 +1,177 @@
-body {font-family: Arial, sans-serif;}
+body {
+    font-family: Arial, sans-serif;
+}
+
+.preloader {
+  /*фиксированное позиционирование*/
+  position: fixed;
+  /* координаты положения */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* фоновый цвет элемента */
+  background: #FFF;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
 
 /*МЕНЮ*/
+.firstpage_style {
+    height: 100%;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(299deg, rgba(2,0,36,1) 0%, rgba(147,12,153,1) 27%, rgba(19,95,186,1) 100%);
+}
+
+
+header {
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+
 nav {
     width: 100%;
     height: 60px;
-    background: #344051;
 }
 
-.logo {
-    color: #ffff;
-    font-size: 30px;
-    line-height: 60px; /*устанавливаю лого по середине,так как высота блока 60пкс*/
-    margin-left: 388px;
+.img_logos {
     float: left;
+    margin: 10px 0 0 20px;
+    -webkit-animation: coming 1.5s;
+    -o- animation: coming 1.5s;
+    animation: coming 1.5s;
+}
+
+
+.logo {
+    margin-left: 280px;
 }
 
 .menu {
     float:left; /*блоки прижимаются к друг другу левым краем*/
-    padding-left: 432px;
+    padding-left: 550px;
+    padding-top: 15px;
 }
 
 .menu li {
     float: left;
-    line-height: 60px; /*устанавливаю меню по середине,так как высота блока 60пкс*/
+    line-height: 30px; /*устанавливаю меню по середине,так как высота блока 60пкс*/
     color: #fff;
     margin-right: 40px;
+    margin-top: 0px;
     font-size: 16px;
     text-transform: uppercase;
+    -webkit-animation: topshift 1.5s ease forwards;
+    -o- animation: topshift 1.5s ease forwards;
+    animation: topshift 1.5s ease forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
 }
+
+.menu a:visited {
+    color: white;
+}
+
+.menu a {
+    transition: all 0.2s;
+    color: white;
+    display: inline-block;
+    transform: scale(0.95);
+}
+
+.menu a:hover {
+    color: #EE8240;
+    transform: scale(1.08);
+}
+
+.menu a:hover::after {
+   content: "";
+   display: block;
+   width: 100%;
+   height: 2px;    
+   background: rgb(252,36,32);
+   background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);  
+}
+
 
 /*ПЕРВАЯ СТРАНИЦА - "Я ХОРОШЕНИН АЛЕКСАНДР"*/
 .firstpage {
     width: 100%;
-    height: 1015px;  /*height: calc(100% - 60px); /*высота с учетом верхнего меню, без прокрутки*/
-    background: url(../img/photo.png) 90% 100%/auto 85% no-repeat, url(../img/sine.jpg) center/cover no-repeat;
+    height: 850px;  /*height: calc(100% - 60px); /*высота с учетом верхнего меню, без прокрутки*/
+
+}
+
+.my_photo {
+    
 }
         
 .title__container {
     float: left;
-    margin: 400px; 0px; 0px; 404px;
+    margin: 300px; 0px; 0px; 404px;
     text-align: center;
+    -webkit-animation: mainname 1.5s ease;
+    -o- animation: mainname 1.5s ease;
+    animation: mainname 1.5s ease;
 }
+
 
 .title__container h1 {
    font-size: 40px;
@@ -56,7 +187,9 @@ nav {
 }
  
 .title__container input {
+    transition: all 1s;
     height: 40px;
+    width: 100px;
     text-align: center;
     border: 2px solid #FFFFFF;
     border-radius: 3px;
@@ -67,30 +200,42 @@ nav {
     margin: 30px 14px 0px 14px;
 }
 
+.title__container input:hover {
+    border: 2px solid #FFFFFF;
+    background: rgb(252,36,32);
+    background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);
+}
+
+
+
 /*БЛОК - "ОБО МНЕ"*/
 .aboutme__container {
     width: 100%;
     height: 715px;
-    background-color: #DEE2E5;
+    background-color: white;
 }
 
 .aboutme__container h3 {
     font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #344051;
+    color: #36044E;
     padding-top: 100px;
     width: 100%;
     text-align: center;
 }
 
-
-.aboutme__container hr {
-    border-bottom: 3px solid #344051;
-    margin: 0 auto;
-    margin-top: 30px;
-    border-color: #344051;
+.aboutme__container h3::after {
+   content: "";
+   display: block;
+   width: 60px;
+   height: 3px;
+   margin: 0 auto;
+   margin-top: 30px;
+   background: rgb(252,36,32);
+   background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);   
 }
+
 
 .aboutme__container img {
     display: block;
@@ -101,24 +246,35 @@ nav {
 .aboutme__container h5 {
     width: 730px;
     margin: 30px auto 0 auto;
-    color: #344051;
+    color: #36044E;
 }
 
 .download {
-    border: 2px solid #344051;
+    border: 2px solid #FFFF;
     width: 100px;
     text-align: center;
     margin: 30px auto 0 auto;
     border-radius: 4px;
     padding: 10px 0 10px 0;
-    color: #344051;
+    background: rgb(2,0,36);
+    background: linear-gradient(299deg, rgba(2,0,36,1) 0%, rgba(147,12,153,1) 27%, rgba(19,95,186,1) 100%);
+}
+
+.download:hover {
+    background: rgb(252,36,32);
+    background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);
+}
+
+.download a {
+    color: #FFFF;
 }
 
 /*СТРАНИЦА - "ЧТО Я УМЕЮ"*/
 .myskills__container {
     width: 100%;
     height: 525px;
-    background: url(../img/sine.jpg) center/cover no-repeat;
+    background: rgb(2,0,36);
+    background: linear-gradient(299deg, rgba(2,0,36,1) 0%, rgba(147,12,153,1) 27%, rgba(19,95,186,1) 100%);
 }
 
 .myskills__container h3 {
@@ -131,11 +287,15 @@ nav {
     text-align: center;
 }
 
-.myskills__container hr {
-    border-bottom: 3px solid #344051;
-    margin: 0 auto;
-    margin-top: 30px;
-    border-color: #FFFF;
+.myskills__container h3::after {
+   content: "";
+   display: block;
+   width: 60px;
+   height: 3px;
+   margin: 0 auto;
+   margin-top: 30px;
+   background: rgb(252,36,32);
+   background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);   
 }
 
 .skills_all {
@@ -157,7 +317,7 @@ nav {
 
 .skilltitle {
     margin-top: 25px;
-    color: #E88420;
+    color: #EE8240;
     font-weight: bold;
     font-size: 15px;
 }
@@ -177,24 +337,28 @@ nav {
     font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #344051;
+    color: #36044E;
     padding-top: 100px;
     width: 100%;
     text-align: center;
 }
 
-.cases__container hr {
-    border-bottom: 3px solid #344051;
-    margin: 0 auto;
-    margin-top: 30px;
-    border-color: #344051;   
+.cases__container h3::after {
+   content: "";
+   display: block;
+   width: 60px;
+   height: 3px;
+   margin: 0 auto;
+   margin-top: 30px;
+   background: rgb(252,36,32);
+   background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);   
 }
 
 #casestext {
     margin-top: 50px;
     width: 100%;
     text-align: center;
-    color: #344051;
+    color: #36044E;
 }
 
 .cases__container img {
@@ -211,7 +375,7 @@ nav {
     font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #102031;
+    color: #36044E;
     padding-top: 100px;
     width: 100%;
     text-align: center;
@@ -226,7 +390,7 @@ nav {
 
 .point {
     font-size: 18px;
-    color: #102031;
+    color: #36044E;
     text-transform: uppercase;
 }
 
@@ -240,15 +404,20 @@ nav {
     opacity: 0.7;
 }
 
-.calculations__container hr {
-    border-bottom: 2px solid #EFEFEF;
-    margin: 0 auto;
-    margin-top: 30px;
-    width: 600px;
+.terms_main::before {
+   content: "";
+   display: block;
+   width: 600px;
+   height: 3px;
+   margin: 0 auto;
+   margin-top: 30px;
+   margin-bottom: 30px;    
+   background: rgb(252,36,32);
+   background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);   
 }
 
 .terms_main {
-    color: #102031;
+    color: #36044E;
     font-weight: bold;
     font-size: 15px;
     width: 600px;
@@ -265,7 +434,7 @@ nav {
 }
 
 .price_main {
-    color: #102031;
+    color: #36044E;
     font-weight: bold;
     font-size: 15px;
     width: 600px;
@@ -286,7 +455,27 @@ nav {
 .statistics__container {
     margin-top: 100px;
     height: 500px;
-    background: url(../img/sine.jpg) center/cover no-repeat; 
+   
+    background: url(https://g.foolcdn.com/image/?url=https%3A//g.foolcdn.com/editorial/images/486193/digital-globe-with-a-variety-of-technology-icons.jpg&w=2000&op=resize);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(299deg, rgba(2,0,36,.8) 0%, rgba(147,12,153,.8) 27%, rgba(19,95,186,.8) 100%);
+    z-index: 2;
+}
+
+.stats_content {
+    position: relative;
+    z-index: 6;
 }
 
 .statistics__container h3 {
@@ -299,11 +488,15 @@ nav {
     text-align: center;
 }
 
-.statistics__container hr {
-    border-bottom: 3px solid #344051;
-    margin: 0 auto;
-    margin-top: 30px;
-    border-color: #FFFF;
+.statistics__container h3::after {
+   content: "";
+   display: block;
+   width: 60px;
+   height: 3px;
+   margin: 0 auto;
+   margin-top: 30px;
+   background: rgb(252,36,32);
+   background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);
 }
 
 .stats_all {
@@ -320,7 +513,7 @@ nav {
     text-align:center;
     display: block; /*Выравниваю блоки по центру*/
     color: #FFFF;
-    margin: 0px 40px 0px 40px; 
+    margin: 0px 40px 0px 40px;
 }
 
 .statnumber {
@@ -345,17 +538,21 @@ nav {
     font-size: 22px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #344051;
+    color: #36044E;
     padding-top: 100px;
     width: 100%;
     text-align: center;
 }
 
-.feedback__container hr {
-    border-bottom: 3px solid #344051;
-    margin: 0 auto;
-    margin-top: 30px;
-    border-color: #344051;
+.feedback__container h3::after {
+   content: "";
+   display: block;
+   width: 60px;
+   height: 3px;
+   margin: 0 auto;
+   margin-top: 30px;
+   background: rgb(252,36,32);
+   background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);   
 }
 
 
@@ -369,21 +566,22 @@ nav {
 .feedback__container h5 {
     width: 730px;
     margin: 30px auto 0 auto;
-    color: #344051;
+    color: #36044E;
     text-align: center;
 }
 
 .feedback__container h6 {
     width: 730px;
     margin: 30px auto 0 auto;
-    color: #344051;
+    color: #36044E;
     text-align: center;
 }
 
 /*БЛОК - "КОНТАКТЫ"*/
 footer {
     width: 100%;
-    background: url(../img/sine.jpg) center/cover no-repeat; 
+    background: rgb(2,0,36);
+    background: linear-gradient(299deg, rgba(2,0,36,1) 0%, rgba(147,12,153,1) 27%, rgba(19,95,186,1) 100%);
 }
 
 footer h3 {
@@ -396,11 +594,15 @@ footer h3 {
     text-align: center;
 }
 
-footer hr {
-    border-bottom: 3px solid #344051;
-    margin: 0 auto;
-    margin-top: 30px;
-    border-color: #FFFF;
+footer h3::after {
+   content: "";
+   display: block;
+   width: 60px;
+   height: 3px;
+   margin: 0 auto;
+   margin-top: 30px;
+   background: rgb(252,36,32);
+   background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);   
 }
 
 footer h5 {
@@ -412,8 +614,9 @@ footer h5 {
 
 .contacts_all {
     width: 1200px;
-    height: 300px;
-    margin: 70px auto;
+    height: 150px;
+    margin: 0 auto;
+    margin-top: 70px;
     text-align:center;
 }
 
@@ -422,6 +625,7 @@ footer h5 {
     color: #FFFF;
     margin: 20px 40px 0px 40px;
     display: inline-block;
+    width: 200px;
     
 }
 
@@ -429,16 +633,72 @@ footer h5 {
     margin-top: 20px;
 }
 
+#message {
+    color: white;
+    text-align: center;
+}
+
+.contact_data {
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.contact_data2 {
+    width: 404px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+footer input {
+    display: inline-block;
+    width: 200px;
+}
+
+footer textarea {
+    width: 404px;
+}
+
+.social_networks_all {
+    width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.social_networks {
+    display: inline-block;
+    margin-left: 20px;
+}
+
 iframe {
     width: 100%;
 }
 
+#copyright {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/*АНИМАЦИИ*/
+
+@keyframes coming {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
 
+@keyframes topshift {
+    from {opacity: 0;
+          margin-top: -80px;}
+    to {opacity: 1;
+        margin-top: 0px;}
+}
 
 
-
-
-
-
-
+@keyframes mainname {
+    from {opacity: 0;
+          margin-left: -500px;}
+    to {opacity: 1;
+        margin-left: 300px;}

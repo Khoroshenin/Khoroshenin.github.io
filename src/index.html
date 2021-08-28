@@ -9,32 +9,56 @@
     <link rel="stylesheet" href="css/reset.css">   
     <link rel="stylesheet" href="css/style.css">     
 </head>
-<body>
-    <header>
+    <body>
+    
+    <div class="preloader">
+  <div class="preloader__row">
+    <div class="preloader__item"></div>
+    <div class="preloader__item"></div>
+  </div>
+    </div>
+    
+    <script>
+  window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  }
+</script>
+    
+    <div class="firstpage_style">
+     <header>
         <nav>
-            <div class="logo">Alex Khoroshenin</div>
+            <div class="logo">
+              <div class="img_logos"> <img src="img/111.png" width="30"> </div>
+              <div class="img_logos"> <img src="img/222.png" width="30"> </div>
+              <div class="img_logos"> <img src="img/333.png" width="30"> </div>
+              <div class="img_logos"> <img src="img/444.png" width="30"> </div>
+            </div>
             <div class="menu">
             <ul>
-                <li>About me</li>
-                <li>Services</li>
-                <li>Cases</li>
-                <li>Prices</li>
-                <li>Feedback</li>
-                <li>Contacts</li>
+                <li><a href="">About me</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Cases</a></li>
+                <li><a href="">Prices</a></li>
+                <li><a href="">Feedback</a></li>
+                <li><a href="">Contacts</a></li>
             </ul>
             </div>
         </nav>
-    </header>
-    
-    <div class="main">
+     </header>
        <div class="firstpage">
         <div class="title__container">
             <h1>Hello <br> I am Alex Khoroshenin</h1>
             <h4>Full stack web-developer</h4>
             <input type="submit" value="About me">
             <input type="submit" value="My works">
-        </div>    
         </div>
+        <div class="my_photo"> <img src=""> </div>    
+        </div>
+    </div>    
         <div class="aboutme__container">
             <h3>About me</h3>
             <hr width="50">
@@ -112,7 +136,8 @@
            </div>    
         </div>
         <div class="statistics__container">
-            <h3>Statistics</h3>
+          <div class="stats_content">
+               <h3>Statistics</h3>
             <hr width="50">
           <div class="stats_all">    
             <div class="stat">
@@ -135,7 +160,9 @@
                <div class="statnumber">23</div>
                <div class="statdescr">Awards</div>
             </div>
-          </div>    
+          </div>
+         </div>
+         <div class="mask"></div>      
         </div>
         <div class="feedback__container">
             <h3>Feedback</h3>
@@ -146,7 +173,6 @@
         </div>
         <footer>
             <h3>My contacts</h3>
-            <hr width="50">
             <h5>Excepteur sint occaecat cupidatat non proident, quia voluptas sit, aspernatur aut odit aut fugit.</h5>
           <div class="contacts_all">   
             <div class="contacts">
@@ -164,21 +190,26 @@
           </div>     
             <br>
             <div id="message">Send me a message</div>
-            <textarea type="text" name="text_input" value="" placeholder="Name"> </textarea>
-            <textarea type="text" name="text_input" value="" placeholder="Email"> </textarea>
+            
+            <div class="contact_data"> 
+             <input type="text" name="text_input" value="" placeholder="Name">
+             <input type="email" name="email_input" value="" placeholder="Email">
+            </div>
+            <div class="contact_data2"> 
             <textarea type="text" name="text_input" value="" placeholder="Message"> </textarea>
-            <textarea type="submit" value="Send"> </textarea>
+            </div>
             <br>
-            <a href="https://ru-ru.facebook.com/"><img src="img/photo.png" alt="sorry" width="40"></a>
-            <a href="https://ru-ru.facebook.com/"><img src="img/photo.png" alt="sorry" width="40"></a>  
-            <a href="https://ru-ru.facebook.com/"><img src="img/photo.png" alt="sorry" width="40"></a>  
-            <a href="https://ru-ru.facebook.com/"><img src="img/photo.png" alt="sorry" width="40"></a>  
-            <a href="https://ru-ru.facebook.com/"><img src="img/photo.png" alt="sorry" width="40"></a>  
-            <a href="https://ru-ru.facebook.com/"><img src="img/photo.png" alt="sorry" width="40"></a>
+            <div class="social_networks_all">
+            <div class="social_networks"><a href="https://ru-ru.facebook.com/"><img src="img/fb.png" alt="sorry" width="15" height="23"></a></div>
+            <div class="social_networks"><a href="https://ru-ru.facebook.com/"><img src="img/twit.png" alt="sorry" width="20"></a></div>  
+            <div class="social_networks"><a href="https://ru-ru.facebook.com/"><img src="img/ball.png" alt="sorry" width="20"></a></div> 
+            <div class="social_networks"><a href="https://ru-ru.facebook.com/"><img src="img/kitty.png" alt="sorry" width="20"></a></div> 
+            <div class="social_networks"><a href="https://ru-ru.facebook.com/"><img src="img/inst.png" alt="sorry" width="20"></a></div>
+            <div class="social_networks"><a href="https://ru-ru.facebook.com/"><img src="img/twit.png" alt="sorry" width="20"></a></div>
+            </div>
             <br>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127926.85860656417!2d30.214587969912934!3d59.934512253080555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310b32cbe2e9%3A0x74e032aa0505dfc!2z0JPQvtGB0YPQtNCw0YDRgdGC0LLQtdC90L3Ri9C5INCt0YDQvNC40YLQsNC2!5e0!3m2!1sru!2sru!4v1627669476065!5m2!1sru!2sru" width="1000" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             <div id="copyright">Copyright 2021 Alex</div>     
         </footer>
-    </div>
 </body>
 </html>

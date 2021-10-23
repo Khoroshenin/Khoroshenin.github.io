@@ -473,6 +473,11 @@ header {
     font-size: 15px;
 }
 
+.icon-font {
+    font-size: 150px !important;
+}
+
+
 /*Медиа запросы*/
 
 @media (max-width: 991px) {
@@ -519,6 +524,7 @@ header {
     } 
 }
 
+
 /*Анимации*/
 
 @keyframes coming {
@@ -539,8 +545,3 @@ header {
     to {opacity: 1;
         margin-left: 0px;}
     
-    
-    
-    .icon-font {
-        font-size: 10px;
-    }    

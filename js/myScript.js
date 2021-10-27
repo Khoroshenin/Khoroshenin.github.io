@@ -2,6 +2,18 @@ let website = prompt("Какой тип сайта тебе нужен? 1-Сай
 let design = prompt("Какой дизайн ты хотел бы? 1-Самый простой, 2-Выберу готовый шаблон, 3-Уникальный дизайн");
 let adaptability = prompt("Адаптивность сайта? 1-Только для ПК, 2-Для ПК и мобилок, 3-Для всех устройств");
 
+let costweb1 = 0;
+let costweb2 = 0;
+let costweb3 = 0;
+
+let costdesign1 = 0;
+let costdesign2 = 0;
+let costdesign3 = 0;
+
+let costadapt1 = 0;
+let costadapt2 = 0;
+let costadapt3 = 0;
+
 //Стоимость сайта
 
 function getCostweb1 () {
@@ -12,7 +24,6 @@ function getCostweb1 () {
 
 function simpleWeb () {
     costweb1 = 5000;
-    console.log(costweb1);
 }  
 
 getCostweb1();
@@ -25,7 +36,6 @@ function getCostweb2 () {
 
 function storeWeb () {
     costweb2 = 10000;
-    console.log(costweb2);
 } 
 
 getCostweb2();
@@ -38,7 +48,6 @@ function getCostweb3 () {
 
 function corpWeb () {
     costweb3 = 8000;
-    console.log(8000);
 }
 
 getCostweb3();
@@ -52,7 +61,7 @@ function getCostdesign1 () {
 }
 
 function simpleDesign () {
-    console.log(3000);
+    costdesign1 = 3000;
 }
 
 getCostdesign1();
@@ -64,7 +73,7 @@ function getCostdesign2 () {
 }
 
 function templateDesign () {
-    console.log(5000);
+    costdesign2 = 5000;
 }
 
 getCostdesign2();
@@ -76,7 +85,7 @@ function getCostdesign3 () {
 }
 
 function customDesign () {
-    console.log(10000);
+    costdesign3 = 10000;
 }
 
 getCostdesign3();
@@ -90,7 +99,7 @@ function getCostadapt1 () {
 }
 
 function adaptPC () {
-    console.log(0);
+    costadapt1 = 0;
 }
 
 getCostadapt1();
@@ -102,7 +111,7 @@ function getCostadapt2 () {
 }
 
 function adaptMob () {
-    console.log(4000);
+    costadapt2 = 4000;
 }
 
 getCostadapt2();
@@ -114,12 +123,15 @@ function getCostadapt3 () {
 }
 
 function adaptAll () {
-    console.log(7000);
+    costadapt3 = 7000;
 }
 
 getCostadapt3();
 
 
 
-let finalpriceWeb = costweb1 + costweb2 + costweb3;
-console.log(finalpriceWeb);
+let finalpriceWeb = (costweb1 + costweb2 + costweb3) + (costdesign1 + costdesign2 + costdesign3) + (costadapt1 + costadapt2 + costadapt3);
+
+let finalpriceText = "Стоимость создания вашего сайта составит " + finalpriceWeb + " рублей." 
+
+alert(finalpriceText);

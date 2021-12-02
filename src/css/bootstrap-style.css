@@ -264,6 +264,58 @@ header {
     padding-top: 50px;
 }
 
+/*Модальное окно*/
+
+#bg_popup{
+background-color: rgba(0, 0, 0, 0.8);
+display: none;
+position: fixed;
+z-index: 99999;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+}
+  
+#popup {
+background: #fff;
+width: 520px;
+margin: 25% auto;
+padding: 5px 20px 13px 20px;
+border: 2px solid #1BA600;
+position: relative;
+-webkit-box-shadow: 0px 0px 20px #000;
+-moz-box-shadow: 0px 0px 20px #000;
+box-shadow: 0px 0px 20px #000;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+}
+  
+.close{
+display:block;
+position:absolute;
+top:-12px;
+right:5px;
+width:25px;
+height:25px;
+line-height:28px;
+color:#fff;
+background:#1BA600;
+cursor:pointer;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+-ms-border-radius: 15px;
+-o-border-radius: 15px;
+border-radius: 15px;
+-moz-box-shadow: 1px 1px 3px #000;
+-webkit-box-shadow: 1px 1px 3px #000;
+box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+background-color:#f30;
+} 
+
 /*Пятая страница - "Расчеты"*/
 
 .calculations {
@@ -301,9 +353,14 @@ header {
    padding: 20px 0 45px 0;    
 }
 
-.number {
+.time {
    text-align: end;    
 }
+
+.final_price {
+   text-align: end;    
+}
+
 
 /*Шестая страница - "Статистика"*/
 
@@ -349,6 +406,19 @@ header {
    margin-top: 30px;
    background: rgb(252,36,32);
    background: linear-gradient(90deg, rgba(252,36,32,1) 12%, rgba(240,122,72,1) 37%, rgba(240,122,72,1) 61%, rgba(231,189,17,1) 85%);   
+}
+
+/* Делаю отложенную анимацию через JQ */
+
+.stat_animation {
+   padding: 60px 0 60px 0;
+   opacity: 0;
+}
+
+.stat_animation.show_animation {
+   padding: 60px 0 60px 0;
+   opacity: 1;
+   transition: opacity 1s;    
 }
 
 .stat_title{
